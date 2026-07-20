@@ -1,0 +1,53 @@
+generated: '2026-07-18'
+method: searched
+source: https://id.articulate.com/.well-known/openid-configuration
+docs: https://id.articulate.com/.well-known/openid-configuration
+summary:
+  types:
+  - openIdConnect
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+  - implicit
+  - refresh_token
+  - deviceCode
+  pkce: true
+  note: >-
+    Articulate does not publish a public developer REST API. Its programmatic
+    surface is the id.articulate.com identity provider (Okta-hosted), which
+    exposes standard OpenID Connect / OAuth 2.0 discovery used to authenticate
+    users into Articulate 360, Rise, Reach 360, and Review. No first-party
+    API-key or bearer-token developer credential is documented publicly.
+schemes:
+- name: OpenIDConnect
+  type: openIdConnect
+  openIdConnectUrl: https://id.articulate.com/.well-known/openid-configuration
+  issuer: https://id.articulate.com
+  sources:
+  - well-known/articulate-openid-configuration.json
+- name: OAuth2
+  type: oauth2
+  issuer: https://id.articulate.com
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://id.articulate.com/oauth2/v1/authorize
+    tokenUrl: https://id.articulate.com/oauth2/v1/token
+    pkce: S256
+  - flow: implicit
+    authorizationUrl: https://id.articulate.com/oauth2/v1/authorize
+  - flow: deviceCode
+    tokenUrl: https://id.articulate.com/oauth2/v1/token
+  endpoints:
+    authorization: https://id.articulate.com/oauth2/v1/authorize
+    token: https://id.articulate.com/oauth2/v1/token
+    userinfo: https://id.articulate.com/oauth2/v1/userinfo
+    jwks: https://id.articulate.com/oauth2/v1/keys
+    registration: https://id.articulate.com/oauth2/v1/clients
+  token_endpoint_auth_methods:
+  - client_secret_basic
+  - client_secret_post
+  - client_secret_jwt
+  - private_key_jwt
+  - none
+  sources:
+  - well-known/articulate-oauth-authorization-server.json
