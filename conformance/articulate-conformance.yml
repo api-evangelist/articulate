@@ -1,0 +1,39 @@
+generated: '2026-07-18'
+method: searched
+source: https://id.articulate.com/.well-known/openid-configuration; https://trust.articulate.com/
+standards:
+- id: oauth2
+  conforms: true
+  evidence: id.articulate.com publishes RFC 8414 oauth-authorization-server metadata with authorization_code, refresh_token, client_credentials and device_code grants.
+- id: oidc
+  conforms: true
+  evidence: id.articulate.com publishes an OpenID Connect discovery document (issuer, authorization/token/userinfo/jwks endpoints, standard OIDC scopes).
+- id: pkce-rfc7636
+  conforms: true
+  evidence: code_challenge_methods_supported advertises S256.
+- id: soc2-type2
+  conforms: true
+  evidence: Trust Center lists AICPA SOC 2 Type 2.
+- id: iso-27001
+  conforms: true
+  evidence: Trust Center lists ISO/IEC 27001 (Information Security Management).
+- id: iso-27701
+  conforms: true
+  evidence: Trust Center lists ISO/IEC 27701 (Privacy Information Management).
+- id: fedramp
+  conforms: true
+  evidence: Listed on marketplace.fedramp.gov (FR2317139564).
+- id: csa-star
+  conforms: true
+  evidence: Trust Center lists CSA STAR Level One Self-Assessment.
+- id: gdpr
+  conforms: true
+  evidence: Trust Center publishes GDPR posture, DPA, sub-processors, and regional data hosting.
+- id: scim
+  conforms: false
+  evidence: No public SCIM provisioning specification found on the developer surface.
+- id: fhir-r4
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No public OpenAPI / error schema published to assess.

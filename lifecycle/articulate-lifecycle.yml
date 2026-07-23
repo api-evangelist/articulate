@@ -1,0 +1,11 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.articulatestatus.com/; https://www.articulate.com/trust/
+status_page: https://www.articulatestatus.com/
+sla:
+  note: Articulate publishes uptime/incident history via its public status page; no numeric public SLA target found on the marketing/trust surface.
+versioning:
+  note: Articulate ships SaaS products (Articulate 360, Rise, Storyline, Reach 360, Review) with continuous release; no public versioned developer API is documented.
+deprecation:
+  note: No public developer-facing deprecation policy or RFC 8594 Sunset/Deprecation header support found (no public REST API surface).
+deprecated_operations: []

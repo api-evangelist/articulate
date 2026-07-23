@@ -1,0 +1,39 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of Articulate web + identity hosts
+hosts:
+- host: https://www.articulate.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: articulate-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://id.articulate.com
+  note: Articulate identity provider (Okta-hosted OIDC/OAuth authorization server) used for SSO into Articulate 360.
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: articulate-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: articulate-oauth-authorization-server.json
+  - path: /.well-known/security.txt
+    status: 405
+  - path: /.well-known/api-catalog
+    status: 405
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://api.articulate.com
+  note: Host resolves but publishes no discovery documents.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404

@@ -1,8 +1,18 @@
 aid: articulate
 name: Articulate
-description: 'Articulate is a company surfaced as a portfolio company of iconiq-capital and added to the
-  API Evangelist network as a stub for enrichment. Sector: edtech. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: >-
+  Articulate is an AI-powered workplace-training platform for creating,
+  collaborating on, and distributing e-learning at scale. Its Articulate 360
+  suite pairs Rise (web-based responsive authoring) and Storyline (desktop
+  authoring for custom interactive content) with Review 360 (stakeholder
+  feedback), Reach 360 (an integrated LMS for sharing and tracking training),
+  Content Library 360, an agentic AI Assistant, and localization into 80+
+  languages. The platform serves 125,000+ organizations across 187 countries
+  and 133 million learners. Articulate does not publish a public developer REST
+  API; its programmatic surface is the id.articulate.com identity provider
+  (OpenID Connect / OAuth 2.0, Okta-hosted) used for single sign-on, plus
+  standards-based content interoperability (SCORM and xAPI) emitted by its
+  authoring tools. Surfaced as a portfolio company of ICONIQ Capital.
 url: https://raw.githubusercontent.com/api-evangelist/articulate/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,12 +20,31 @@ x-backed-by:
 - iconiq-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://www.articulate.com/apple-touch-icon.png
 tags:
 - Company
 - Edtech
+- E-Learning
+- Learning Management
+- Training
+- Course Authoring
+- SSO
+- OpenID Connect
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,3 +54,56 @@ maintainers:
 common:
 - type: Website
   url: https://www.articulate.com/
+- type: DeveloperPortal
+  url: https://id.articulate.com/.well-known/openid-configuration
+- type: Documentation
+  url: https://www.articulatesupport.com/
+- type: Support
+  url: https://www.articulatesupport.com/
+- type: HelpCenter
+  url: https://community.articulate.com/
+- type: Blog
+  url: https://www.articulate.com/blog/
+- type: Pricing
+  url: https://www.articulate.com/360/pricing/
+- type: SignUp
+  url: https://www.articulate.com/360/trial/
+- type: Login
+  url: https://id.articulate.com/redirect/360
+- type: TermsOfService
+  url: https://www.articulate.com/360-terms-of-service/
+- type: PrivacyPolicy
+  url: https://www.articulate.com/trust/privacy/
+- type: StatusPage
+  url: https://www.articulatestatus.com/
+- type: TrustCenter
+  url: security/articulate-trust-center.yml
+- type: Compliance
+  url: https://www.articulate.com/trust/
+- type: Security
+  url: https://www.articulate.com/.well-known/security.txt
+- type: Authentication
+  url: authentication/articulate-authentication.yml
+- type: OpenIDConnect
+  url: https://id.articulate.com/.well-known/openid-configuration
+- type: OAuthScopes
+  url: scopes/articulate-scopes.yml
+- type: WellKnown
+  url: well-known/articulate-well-known.yml
+- type: SecurityTxt
+  url: well-known/articulate-security.txt
+- type: DomainSecurity
+  url: security/articulate-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/articulate-vulnerability-disclosure.yml
+- type: Conformance
+  url: conformance/articulate-conformance.yml
+- type: Lifecycle
+  url: lifecycle/articulate-lifecycle.yml
+- type: LLMsTxt
+  url: llms/articulate-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,39 @@
+# Articulate
+
+> Articulate is an AI-powered platform for creating, collaborating on, and distributing workplace training at scale. Its Articulate 360 suite (Rise, Storyline, Review, Reach 360, Content Library 360, AI Assistant, and Localization) serves 125,000+ organizations across 187 countries and 133 million learners. Articulate does not publish a public developer REST API; its programmatic surface is the id.articulate.com identity provider (OpenID Connect / OAuth 2.0, Okta-hosted) used for SSO, plus standards-based e-learning content interop (SCORM / xAPI) produced by its authoring tools.
+
+## Products
+- [Articulate 360 Platform](https://www.articulate.com/360/): Creation, collaboration, distribution, and localization suite.
+- [Rise](https://www.articulate.com/360/rise/): Web-based responsive course authoring.
+- [Storyline](https://www.articulate.com/360/storyline/): Desktop authoring for custom interactive content.
+- [Review 360](https://www.articulate.com/360/review/): Feedback and stakeholder review.
+- [Reach 360](https://www.articulate.com/360/reach/): Integrated LMS for sharing and tracking training.
+- [Content Library 360](https://www.articulate.com/360/content-library/): Pre-built training content and assets.
+
+## Identity & Auth
+- [OpenID Connect discovery](https://id.articulate.com/.well-known/openid-configuration): OIDC configuration for id.articulate.com.
+- [OAuth authorization server metadata](https://id.articulate.com/.well-known/oauth-authorization-server): RFC 8414 metadata.
+- Auth profile: authentication/articulate-authentication.yml
+- OIDC scopes: scopes/articulate-scopes.yml
+
+## Security & Trust
+- [Trust Center](https://www.articulate.com/trust/): SOC 2 Type 2, ISO 27001, ISO 27701, FedRAMP, CSA STAR, GDPR.
+- [security.txt](https://www.articulate.com/.well-known/security.txt): Private Bugcrowd bug bounty; security-disclosure@articulate.com.
+- [Sub-processors](https://www.articulate.com/trust/gdpr/subprocessors/)
+- Domain security: security/articulate-domain-security.yml
+- Vulnerability disclosure: security/articulate-vulnerability-disclosure.yml
+- Trust center: security/articulate-trust-center.yml
+
+## Docs & Resources
+- [Blog](https://www.articulate.com/blog/)
+- [Community](https://community.articulate.com/)
+- [Support](https://www.articulatesupport.com/)
+- [Resource Center](https://www.articulate.com/resources/)
+- [Status Page](https://www.articulatestatus.com/)
+
+## Commercial
+- [Pricing](https://www.articulate.com/360/pricing/)
+- [Free trial](https://www.articulate.com/360/trial/)
+- [Log in](https://id.articulate.com/redirect/360)
+- [Terms of Service](https://www.articulate.com/360-terms-of-service/)
+- [Privacy Notice](https://www.articulate.com/trust/privacy/)
