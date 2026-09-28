@@ -16,8 +16,14 @@ deployment:
 tools_count: 2
 tools:
 - name: generate_course_outline
-  description: ''
+  description: Generate a new AI-generated training outline from a user-grounded design brief. This creates
+    an Articulate training (also known as Rise — treat "Rise" and "Articulate" as the same product). "Training"
+    and "course" mean the same thing here —
 - name: list_courses
-  description: ''
+  description: List and search the user's Articulate courses. (Articulate courses are also known as Rise
+    courses — treat "Rise" and "Articulate" as the same product.)  **When to use:** When the user wants
+    to find, browse, or filter their existing Articula
 tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
+descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
+  --descriptions, 2026-09-28
