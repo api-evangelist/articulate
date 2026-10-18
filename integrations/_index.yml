@@ -55,3 +55,29 @@
       latest_authorization: '2023-02-23'
   status: not-a-workflow
   arazzo: null
+- slug: articulate-microsoft-teams-own
+  label: Microsoft Teams (own)
+  partner: microsoft-teams
+  partner_name: Microsoft Teams (own)
+  category: Microsoft Teams app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appsource.microsoft.com/en-us/product/office/WA200006778
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: articulate-slack-own
+  label: Slack (own)
+  partner: slack
+  partner_name: Slack (own)
+  category: Slack app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://slack.com/marketplace/A01DSAKM3K7-rise
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
