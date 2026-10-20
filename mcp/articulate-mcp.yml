@@ -16,13 +16,69 @@ deployment:
 tools_count: 2
 tools:
 - name: generate_course_outline
-  description: Generate a new AI-generated training outline from a user-grounded design brief. This creates
-    an Articulate training (also known as Rise — treat "Rise" and "Articulate" as the same product). "Training"
-    and "course" mean the same thing here —
+  description: "Generate a new AI-generated training outline from a user-grounded design brief. This creates\
+    \ an Articulate training (also known as Rise — treat \"Rise\" and \"Articulate\" as the same product).\
+    \ \"Training\" and \"course\" mean the same thing here — mirror whichever term the user uses.\n\n\
+    **When to use:** After a back-and-forth design conversation with the user about the training they\
+    \ want — not on the first turn they mention one.\n\n**What it does:** Creates a new training outline\
+    \ — a starting structure, not a finished training — uses the design brief to set the outline's direction,\
+    \ and returns the authoring URL where the user reviews and builds it out.\n\n**Design the brief WITH\
+    \ the user before calling this tool.** Do not extract requirements by sending one wall-of-questions\
+    \ message. Have a real conversation:\n\n- Ask **1–2 questions at a time**, not all at once.\n- Where\
+    \ useful, **propose 2–3 concrete options** (possible audiences, tones, scopes, framings) the user\
+    \ can react to instead of open-ended prompts. Reacting is faster and more honest than free-form answering.\n\
+    - **Reflect what you've heard** back in your own words before moving to the next topic, so the user\
+    \ can correct you.\n- Move through these topics in roughly this order, following the user's lead:\n\
+    \  - **Who** the learners are and what they currently know\n  - **What** they should be able to do\
+    \ afterward\n  - **Why** this matters (business context, audience pain points, the moment of need)\n\
+    \  - **How** it should feel (tone, format, approximate duration)\n  - **What to avoid** (out of scope,\
+    \ sensitivities, brand or compliance constraints)\n\n**Confirmation gate (required).** When you have\
+    \ enough to write a strong brief, **do not call this tool yet**. Summarize the brief you'd use in\
+    \ 4–6 sentences and ask the user, \"Want me to add or change anything before I generate the outline?\"\
+    \ Only call `generate_course_outline` after they confirm.\n\n**Anti-patterns to avoid:**\n- Firing\
+    \ a survey of every question at once.\n- Calling this tool the same turn the user first mentions wanting\
+    \ training.\n- Padding a thin user request to make the brief look substantive — use what the user\
+    \ actually gave you.\n- Inventing audiences, goals, or constraints the user did not supply."
 - name: list_courses
-  description: List and search the user's Articulate courses. (Articulate courses are also known as Rise
-    courses — treat "Rise" and "Articulate" as the same product.)  **When to use:** When the user wants
-    to find, browse, or filter their existing Articula
+  description: 'List and search the user''s Articulate courses. (Articulate courses are also known as
+    Rise courses — treat "Rise" and "Articulate" as the same product.)
+
+
+    **When to use:** When the user wants to find, browse, or filter their existing Articulate (Rise) courses
+    — for example, finding courses by topic, seeing what was recently updated, or locating courses published
+    within a time range.
+
+
+    **What it does:** Returns the user''s Articulate courses, sorted by last-updated date with the most
+    recently updated first. Results are presented in a Markdown table with columns for `Course`, `Last
+    updated`, and `Format`. Each course title is a clickable authoring link. Supports optional filtering
+    by title search, last-updated date, and publication date.
+
+
+    **Examples:**
+
+    - "What courses do I have about compliance?" → use search: "compliance"
+
+    - "What courses were updated in the last 2 weeks?" → use updatedSince with an ISO 8601 date string
+    for 2 weeks ago
+
+    - "What courses were published over a year ago?" → use publishedBefore with an ISO 8601 date string
+    for 1 year ago
+
+    - "Show me my courses" → call with no filters
+
+    - "Show me my 5 most recent courses" → use limit: 5
+
+
+    **Pagination & large lists:** One call returns up to `limit` courses (default 64, max 2000). The response
+    reports the range shown and the total match count (e.g. "Showing 1–64 of 287") and includes a `nextOffset`
+    value when more courses remain. To show more, call this tool again with `offset` set to that `nextOffset`.
+    Offsets do not retain query state, so repeat the same limit and filters unchanged on every continuation
+    call. If you don''t have the latest `nextOffset`, add the same `limit` to the zero-based start offset
+    of the page you already showed. For example, with `limit: 5`, "Showing 6–8" started at `offset: 5`,
+    so continue with `offset: 10` rather than starting over. When the total is large, offer to narrow
+    the list with `search` or a date filter instead of paging through everything. Never show `offset`,
+    `limit`, or describe pagination or tool mechanics to the user.'
 tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
 descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
